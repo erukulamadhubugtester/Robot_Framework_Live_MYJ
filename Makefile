@@ -1,37 +1,74 @@
 # Makefile for Robot Framework
 
+# RESULTS_DIR=results
+
+# test:
+# 	@echo "🧹 Cleaning old results..."
+# 	@rm -rf $(RESULTS_DIR)
+# 	@echo "🚀 Running Robot Framework tests..."
+# 	@robot -d $(RESULTS_DIR) tests/
+# 	@echo "🌐 Opening report..."
+# 	@open $(RESULTS_DIR)/report.html   # Mac
+# 	# For Linux, replace with: xdg-open $(RESULTS_DIR)/report.html
+# 	# For Windows PowerShell: start $(RESULTS_DIR)/report.html
+
+
+
+# # Run only login tests
+# home_page:
+# 	@echo "🧹 Cleaning old results..."
+# 	@rm -rf $(RESULTS_DIR)
+# 	@echo "🚀 Running ONLY login tests..."
+# 	@robot -d $(RESULTS_DIR) tests/homepage/homepage_tests.robot
+# 	@echo "🌐 Opening report..."
+# 	@open $(RESULTS_DIR)/report.html   # Mac
+# 	# For Linux: xdg-open $(RESULTS_DIR)/report.html
+# 	# For Windows PowerShell: start $(RESULTS_DIR)/report.html
+
+# # Run only login tests
+# login:
+# 	@echo "🧹 Cleaning old results..."
+# 	@rm -rf $(RESULTS_DIR)
+# 	@echo "🚀 Running ONLY login tests..."
+# 	@robot -d $(RESULTS_DIR) tests/login/login_tests.robot
+# 	@echo "🌐 Opening report..."
+# 	@open $(RESULTS_DIR)/report.html   # Mac
+# 	# For Linux: xdg-open $(RESULTS_DIR)/report.html
+# 	# For Windows PowerShell: start $(RESULTS_DIR)/report.html
+
+
 RESULTS_DIR=results
 
+define CLEAN_RESULTS
+	@echo "🧹 Cleaning old results..."
+	@python -c "import shutil; shutil.rmtree('$(RESULTS_DIR)', ignore_errors=True)"
+endef
+
+define OPEN_REPORT
+	@echo "🌐 Opening report..."
+	@if [ "$$OS" = "Windows_NT" ]; then \
+		start $(RESULTS_DIR)\report.html; \
+	elif command -v open >/dev/null 2>&1; then \
+		open $(RESULTS_DIR)/report.html; \
+	else \
+		xdg-open $(RESULTS_DIR)/report.html; \
+	fi
+endef
+
 test:
-	@echo "🧹 Cleaning old results..."
-	@rm -rf $(RESULTS_DIR)
+	$(CLEAN_RESULTS)
 	@echo "🚀 Running Robot Framework tests..."
-	@robot -d $(RESULTS_DIR) tests/
-	@echo "🌐 Opening report..."
-	@open $(RESULTS_DIR)/report.html   # Mac
-	# For Linux, replace with: xdg-open $(RESULTS_DIR)/report.html
-	# For Windows PowerShell: start $(RESULTS_DIR)/report.html
+	@python -m robot -d $(RESULTS_DIR) tests/
+	$(OPEN_REPORT)
 
-
-
-# Run only login tests
 home_page:
-	@echo "🧹 Cleaning old results..."
-	@rm -rf $(RESULTS_DIR)
-	@echo "🚀 Running ONLY login tests..."
-	@robot -d $(RESULTS_DIR) tests/homepage/homepage_tests.robot
-	@echo "🌐 Opening report..."
-	@open $(RESULTS_DIR)/report.html   # Mac
-	# For Linux: xdg-open $(RESULTS_DIR)/report.html
-	# For Windows PowerShell: start $(RESULTS_DIR)/report.html
+	$(CLEAN_RESULTS)
+	@echo "🚀 Running ONLY home page tests..."
+	@python -m robot -d $(RESULTS_DIR) tests/homepage/homepage_tests.robot
+	$(OPEN_REPORT)
 
-# Run only login tests
 login:
-	@echo "🧹 Cleaning old results..."
-	@rm -rf $(RESULTS_DIR)
+	$(CLEAN_RESULTS)
 	@echo "🚀 Running ONLY login tests..."
-	@robot -d $(RESULTS_DIR) tests/login/login_tests.robot
-	@echo "🌐 Opening report..."
-	@open $(RESULTS_DIR)/report.html   # Mac
-	# For Linux: xdg-open $(RESULTS_DIR)/report.html
-	# For Windows PowerShell: start $(RESULTS_DIR)/report.html
+	@python -m robot -d $(RESULTS_DIR) tests/login/login_tests.robot
+	$(OPEN_REPORT)
