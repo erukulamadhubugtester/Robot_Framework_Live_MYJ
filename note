@@ -1,4 +1,9 @@
+# Robot Framework Language Server
 https://marketplace.visualstudio.com/items?itemName=robocorp.robotframework-lsp
+
+# install
+
+pip install robotframework-debuglibrary
 
 # normal run
 
