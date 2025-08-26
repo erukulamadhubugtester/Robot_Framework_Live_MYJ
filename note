@@ -1,0 +1,13 @@
+https://marketplace.visualstudio.com/items?itemName=robocorp.robotframework-lsp
+
+# normal run
+
+robot tests/ - all
+robot -d results tests/ - all
+robot -d results tests/login/login_tests.robot - single
+
+# need make file
+
+make test - impartent file whole project
+make test - all
+make login - single file { we need add all file code }

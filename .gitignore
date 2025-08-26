@@ -1,0 +1,24 @@
+# Python virtual environment
+venv/
+.env/
+.history
+# Robot Framework output & logs
+output.xml
+log.html
+report.html
+debug.log
+results/
+
+# VS Code settings
+.vscode/
+*.code-workspace
+
+# macOS system files
+.DS_Store
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
