@@ -31,7 +31,7 @@ git merge office     # Merge changes from madhu-office into main
 git push origin main       # Push merged main branch to GitHub
 
 #  git log --oneline           #check out code
-#  git checkout office-mac   # switch to my branch
+#  git checkout office   # switch to my branch
 #  git branch                 #  current branch check
 
 
