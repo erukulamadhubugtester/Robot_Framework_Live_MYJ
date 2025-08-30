@@ -13,13 +13,10 @@ Open Landing Page
     Open Browser    ${BASE_URL}    ${BROWSER}
     Maximize Browser Window
 
-Verify Login Button Is Displayed
-    Highlight Element    ${LOGIN_LINK}
-    Page Should Contain Element    ${LOGIN_LINK}
-    Element Text Should Be         ${LOGIN_LINK}    Login
 
-# 1. Login User Home Page
-Verify Login User Home Page
+
+# 1. Login User Dashboard Page
+
     
     Highlight Element    ${LOGIN_LINK}
     Click Element        ${LOGIN_LINK}
@@ -86,17 +83,7 @@ Verify Login User Dashboard Page
 
 
 
-# 3. Login User Profile Page
-Verify Login User Profile Page
-  Set Browser Implicit Wait    2
 
-# 4. Login User VIP Page
-Verify Login User VIP Page
-  Set Browser Implicit Wait    2
-
-
-# 4. Login User Connections Page
-Verify Login User Connections Page
   Set Browser Implicit Wait    2
 
 Close Browser Session

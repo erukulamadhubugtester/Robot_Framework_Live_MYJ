@@ -1,12 +1,14 @@
 # Robot Framework Language Server
 https://marketplace.visualstudio.com/items?itemName=robocorp.robotframework-lsp
 
+
+source venv/bin/activate
+
 # install
 
 pip install robotframework-debuglibrary
 
 # normal run
-
 robot tests/ - all
 robot -d results tests/ - all
 robot -d results tests/login/login_tests.robot - single

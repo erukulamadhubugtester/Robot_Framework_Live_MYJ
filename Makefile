@@ -38,6 +38,8 @@
 
 
 RESULTS_DIR=results
+test:
+	robot --outputdir results tests/
 
 define CLEAN_RESULTS
 	@echo "🧹 Cleaning old results..."
