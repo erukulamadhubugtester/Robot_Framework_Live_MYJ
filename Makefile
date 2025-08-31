@@ -79,5 +79,11 @@ login:
 dashboard:
 	$(CLEAN_RESULTS)
 	@echo "🚀 Running ONLY login tests..."
-	@python -m robot -d $(RESULTS_DIR) tests/dashboard_module.robot
+	@python -m robot -d $(RESULTS_DIR) tests/dashboard_module_test.robot
+	$(OPEN_REPORT)
+
+profile:
+	$(CLEAN_RESULTS)
+	@echo "🚀 Running ONLY login tests..."
+	@python -m robot -d $(RESULTS_DIR) tests/profile_module_test.robot
 	$(OPEN_REPORT)
