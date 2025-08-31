@@ -63,14 +63,21 @@ test:
 	@python -m robot -d $(RESULTS_DIR) tests/
 	$(OPEN_REPORT)
 
-home_page:
+landing_page:
 	$(CLEAN_RESULTS)
 	@echo "🚀 Running ONLY home page tests..."
-	@python -m robot -d $(RESULTS_DIR) tests/homepage/homepage_tests.robot
+	@python -m robot -d $(RESULTS_DIR) tests/landing_page.robot
 	$(OPEN_REPORT)
 
 login:
 	$(CLEAN_RESULTS)
 	@echo "🚀 Running ONLY login tests..."
-	@python -m robot -d $(RESULTS_DIR) tests/login/login_tests.robot
+	@python -m robot -d $(RESULTS_DIR) tests/login_tests.robot
+	$(OPEN_REPORT)
+
+
+dashboard:
+	$(CLEAN_RESULTS)
+	@echo "🚀 Running ONLY login tests..."
+	@python -m robot -d $(RESULTS_DIR) tests/dashboard_module.robot
 	$(OPEN_REPORT)

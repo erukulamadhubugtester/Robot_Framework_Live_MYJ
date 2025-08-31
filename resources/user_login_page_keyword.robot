@@ -18,8 +18,8 @@ Verify Login Button Is Displayed
     Page Should Contain Element    ${LOGIN_LINK}
     Element Text Should Be         ${LOGIN_LINK}    Login
 
-# 1. Login User 
-Verify Login landing Page
+# 1. Login User Home Page
+Verify Login User login Page
     
     Highlight Element    ${LOGIN_LINK}
     Click Element        ${LOGIN_LINK}
@@ -36,7 +36,10 @@ Verify Login landing Page
     Sleep    5
     Highlight Element    ${profile_link}
    
+ 
+
+
+
 
 Close Browser Session
     Close Browser
-

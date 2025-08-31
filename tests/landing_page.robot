@@ -1,5 +1,5 @@
 *** Settings ***
-Resource    ../../resources/ui_keywords.robot
+Resource    ../resources/user_login_page_keyword.robot
 Suite Teardown    Close Browser Session
 
 *** Test Cases ***
