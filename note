@@ -34,6 +34,14 @@ git push origin main       # Push merged main branch to GitHub
 
 #  git log --oneline           #check out code
 #  git checkout office   # switch to my branch
+#  git checkout home 
+
+
+#  git branch -a
+  home
+  main
+  office
+
 #  git branch                 #  current branch check
 
 
