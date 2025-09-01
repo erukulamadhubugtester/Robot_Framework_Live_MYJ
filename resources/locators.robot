@@ -65,13 +65,51 @@ ${PHONE_NO}         xpath=//span[contains(@class,'Num')]
 ${EMAIL_ID}         xpath=//span[contains(@class,'mailtext')]
 
 
-
+# --------------
 
 
 
 
 #  4. VIP  xpaths 
 ${VIP_link}      xpath=//a[text()='VIP']
+${VIP_URL}       https://makeyourjodi.com/vip
+
+${CHOOSE_PLAN_XPATH}     xpath=//h2[normalize-space(text())="Choose a plan"]
+
+${BASIC_PLAN_IMG}     xpath=//img[@alt="basic"]
+${BASIC_POINTS}       xpath=//ul[@class="flex flex-col space-y-2 text-left "]//li/span
+
+${FREE_BUTTON}     xpath=//button[normalize-space(text())="Free"]
+
+${SILVER_PLAN_IMG}    xpath=//img[@alt="silver"]
+${SILVER_LOGO_IMG}    xpath=//img[@alt="silver logo"]
+${PLAN_POINTS}      xpath=//ul[@class="flex flex-col space-y-2 text-left"]//li/span
+
+${TOTAL_AMOUNT}      xpath=//span[contains(@class,"line-through")]
+${DISCOUNT}          xpath=//span[contains(text(),"Off")]
+${FINAL_AMOUNT}     xpath= //p[contains(text(),"/month")]
+
+${UPGRADE_BTN}    //button[normalize-space(text())="UPGRADE"]
+${ACTIVE_BTN}     //button[normalize-space(text())="ACTIVE"]
+
+${CART_PAGE_TITLE}    //h1[normalize-space(.)="Your Cart"]
+
+
+${CART_SILVER_LOGO}    //img[@alt="silver-logo"]
+${CART_SILVER_TITLE}   //h2[normalize-space(text())="SILVER"]
+
+${FEATURE_TEXT}        //ul[@class='text-black']//p
+${FEATURE_LOGO}        //ul[@class='text-black']//div
+${MAX_ITEMS}           7
+
+${PAYMENT_FREQUENCY_TITLE}    //h2[text()='Payment Frequency']
+
+${PAYMENT_OPTION_CONTAINER}    //div[contains(@class,'flex items-center space-x-3')]
+
+
+
+
+# -----------------------------------------
 
 #  5. Connections  xpaths 
 ${Connections_link}      xpath=//a[text()='Connections']

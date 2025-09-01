@@ -87,3 +87,10 @@ profile:
 	@echo "🚀 Running ONLY login tests..."
 	@python -m robot -d $(RESULTS_DIR) tests/profile_module_test.robot
 	$(OPEN_REPORT)
+
+vip:
+	$(CLEAN_RESULTS)
+	@echo "🚀 Running ONLY login tests..."
+	@python -m robot -d $(RESULTS_DIR) tests/vip_module_test.robot
+	$(OPEN_REPORT)
+
