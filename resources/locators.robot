@@ -113,9 +113,26 @@ ${PAYMENT_OPTION_CONTAINER}    //div[contains(@class,'flex items-center space-x-
 
 #  5. Connections  xpaths 
 ${Connections_link}      xpath=//a[text()='Connections']
+${Connections_URL}       https://makeyourjodi.com/connect
+
+${TAB_SENT}       //li[contains(text(),'Sent')]
+${TAB_RECEIVED}   //li[contains(text(),'Received')]
+${TAB_CONNECTED}  //li[contains(text(),'Connected')]
+
+# ----------------------------------------------------
+
+# Notifications
+${NOTIFICATION_BUTTON}    //button[@type='button' and contains(@class,'text-gray-600')]
+${NOTIFICATION_ICON}      //button[@type='button' and contains(@class,'text-gray-600')]//svg
+
+*** Variables ***
+${NOTIFICATION_BUTTON}    //button[.//span[text()='View notifications']]
+${NOTIFICATION_ICON}      ${NOTIFICATION_BUTTON}//svg
+${NOTIFICATION_TITLE}     //h2[contains(text(),'Notifications')]
+${CLOSE_ICON}             //button[.//img[@alt='close']]
 
 
-
+${NOTIFICATION_ITEM}    //div[contains(@class,'flex mb-4 p-3 rounded-lg')]
 
 
 

@@ -94,3 +94,16 @@ vip:
 	@python -m robot -d $(RESULTS_DIR) tests/vip_module_test.robot
 	$(OPEN_REPORT)
 
+connections:
+	$(CLEAN_RESULTS)
+	@echo "🚀 Running ONLY login tests..."
+	@python -m robot -d $(RESULTS_DIR) tests/connections_module_test.robot
+	$(OPEN_REPORT)
+
+
+notifications:
+	$(CLEAN_RESULTS)
+	@echo "🚀 Running ONLY login tests..."
+	@python -m robot -d $(RESULTS_DIR) tests/notifications_module_test.robot
+	$(OPEN_REPORT)
+
