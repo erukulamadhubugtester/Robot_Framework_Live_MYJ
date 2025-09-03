@@ -5,6 +5,7 @@ Library    DebugLibrary
 Library    Collections
 Resource   ../resources/locators.robot
 Resource   variables.robot
+Resource   ../resources/user_dashboard_page_keyword.robot
 
 
 *** Keywords ***
@@ -161,3 +162,15 @@ Validate Footer Links
     Scroll Element Into View         ${Company_Matchmaking}
     Highlight Element                ${Company_Matchmaking}
          
+Verify User Profile
+    Wait Until Element Is Visible    ${USER_PROFILE_BUTTON}    10s
+    Highlight Element    ${USER_PROFILE_BUTTON}
+
+    # Check avatar visibility
+    ${avatar_visible}=    Run Keyword And Return Status    Element Should Be Visible    ${USER_AVATAR_IMG}
+    Log To Console    📌 User Avatar Displayed: ${avatar_visible}
+
+    # Click profile button
+    Click Element    ${USER_PROFILE_BUTTON}
+    Log To Console    ✅ User Profile Button Clicked
+    Sleep    2s

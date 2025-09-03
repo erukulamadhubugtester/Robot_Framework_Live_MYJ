@@ -134,7 +134,16 @@ ${CLOSE_ICON}             //button[.//img[@alt='close']]
 
 ${NOTIFICATION_ITEM}    //div[contains(@class,'flex mb-4 p-3 rounded-lg')]
 
+# --------------------------------------------------
 
+# user profile 
+${USER_PROFILE_BUTTON}    xpath=//button[contains(@class,'relative flex items-center max-w-xs')]
+${USER_AVATAR_IMG}        xpath=//button[contains(@class,'relative flex items-center max-w-xs')]//img[@alt='User avatar']
+
+
+# User Account Settings 
+${account_settings_link}      xpath=//a[text()='Account settings']
+${account_settings_URL}       https://makeyourjodi.com/setting
 
 
 

@@ -107,3 +107,9 @@ notifications:
 	@python -m robot -d $(RESULTS_DIR) tests/notifications_module_test.robot
 	$(OPEN_REPORT)
 
+account seetings:
+	$(CLEAN_RESULTS)
+	@echo "🚀 Running ONLY login tests..."
+	@python -m robot -d $(RESULTS_DIR) tests/account_seetings_module_test.robot
+	$(OPEN_REPORT)
+

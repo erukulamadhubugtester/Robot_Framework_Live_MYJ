@@ -135,6 +135,8 @@ Verify sliver plan
 
 
 # ---------- Plan Button Validation ----------
+*** Keywords ***
+
 Validate User Plan Button
     ${is_upgrade}=    Run Keyword And Return Status    Page Should Contain Element    ${UPGRADE_BTN}
     ${is_active}=     Run Keyword And Return Status    Page Should Contain Element    ${ACTIVE_BTN}
@@ -147,7 +149,6 @@ Validate User Plan Button
         Fail    ❌ Neither UPGRADE nor ACTIVE button found
     END
 
-
 Validate Upgrade Button
     Wait Until Element Is Visible    ${UPGRADE_BTN}    10s
     Highlight Element    ${UPGRADE_BTN}
@@ -158,13 +159,10 @@ Validate Upgrade Button
     Click Element    ${UPGRADE_BTN}
     Log To Console    🔄 Upgrade button clicked to continue flow!
 
-    # --- Validate Cart Page ---
-    Wait Until Location Contains    /cart/Silver    10s
-    ${current_url}=    Get Location
-    Log To Console    🌐 Current URL after clicking: ${current_url}
-    Should Contain    ${current_url}    /cart/Silver    msg=❌ Cart page URL mismatch!
-    Log To Console    🛒 Cart page validated successfully!
-
+    # --- Validate Cart Page Only For UPGRADE ---
+    Validate Cart Page
+    Validate Cart Features
+    Verify Payment Frequency Title
 
 Validate Active Button
     Wait Until Element Is Visible    ${ACTIVE_BTN}    10s
@@ -176,7 +174,6 @@ Validate Active Button
     ${enabled}=    Run Keyword And Return Status    Element Should Be Enabled    ${ACTIVE_BTN}
     Should Be Equal As Strings    ${enabled}    False    msg=❌ ACTIVE button should be disabled
     Log To Console    🟢 Active button is disabled as expected
-
 
 
 

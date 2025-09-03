@@ -6,4 +6,5 @@ Suite Teardown    Close Browser Session
 Verify Login User Dashboard/Home Page
    Open Landing Page
    Verify Login User Dashboard Page
+   Verify User Profile
    Validate Footer Links

@@ -5,14 +5,12 @@ Suite Teardown    Close Browser Session
 *** Test Cases ***
 Verify Login User VIP Page
    Open Landing Page
-   Verify Login User VIP Page
-   Verify VIP URL 
-   Verify Basic Plan 
-   Verify sliver plan 
-   Validate User Plan Button
-   Validate Cart Page
-   Validate Cart Features
-   Verify Payment Frequency Title
+    Verify Login User VIP Page
+    Verify VIP URL
+    Verify Basic Plan
+    Verify sliver plan
+    Validate User Plan Button
+    # ✅ Cart validations are handled inside Validate Upgrade Button only
 
 
 

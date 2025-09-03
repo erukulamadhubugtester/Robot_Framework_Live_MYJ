@@ -27,3 +27,5 @@ interactive_console_output.xml
 log.html
 output.xml
 report.html
+
+libraries/__pycache__
