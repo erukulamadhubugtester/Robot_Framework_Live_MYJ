@@ -9,9 +9,11 @@ ${LOGIN_BUTTON}  xpath=//a[@href="/login" and contains(@class,"py-2")]
 ${LOGIN_LINK}        xpath=//a[@href="/login" and contains(@class,"py-2")]
 ${LOGIN_HEADER}      xpath=//h1[contains(@class,"title-outsidelogin") and text()="Login"]
 ${PHONE_INPUT}       xpath=//input[@type='tel']
-${PHONE_NUMBER}      6303481147
+# ${PHONE_NUMBER}      6303481147 
+${PHONE_NUMBER}    7289957376
 ${PASSWORD_INPUT}    id=password
-${PASSWORD}          Qwerty@1
+# ${PASSWORD}          Qwerty@1
+${PASSWORD}          Qwerty@8
 ${CONTINUE_BUTTON}   xpath=//button[contains(@class,"submit-buttonlogin")]
 
 
@@ -145,10 +147,114 @@ ${USER_AVATAR_IMG}        xpath=//button[contains(@class,'relative flex items-ce
 ${account_settings_link}      xpath=//a[text()='Account settings']
 ${account_settings_URL}       https://makeyourjodi.com/setting
 
+${ACCOUNT_SETTINGS_TITLE}    xpath=//div[contains(@class,'font-bold') and contains(text(),'Account settings')]
+${PLANS_TITLE}    xpath=//h2[contains(@class,'font-bold') and contains(text(),'Plans')]
+${USER_PLAN}      xpath=//h4[contains(text(),'Your Plan')]/following-sibling::p
+${EXPIRY_DATE}    xpath=//h4[contains(text(),'Expiry Date')]/following-sibling::p
+
+${UPGRADE_BTN}    xpath=//button[text()='Upgrade']
+${CANCEL_BTN}     xpath=//button[text()='Cancel Plan']
+
+${ACCOUNT_ACCESS_TITLE}    xpath=//h2[contains(@class,'text-customPink') and normalize-space(.)='Account access']
+${USER_NAME}      xpath=//label[normalize-space(.)='Your Account :']/following-sibling::label
+${MOBILE_NUMBER}  xpath=//label[normalize-space(.)='Mobile Number :']/following-sibling::span
+
+
+${PRIVACY_TITLE}    xpath=//h2[contains(@class,'text-customPink') and normalize-space(.)='Privacy']
+# --- Mobile Number ---
+${MOBILE_HEADING}      xpath=//label[normalize-space(text())="Mobile Number"]
+${MOBILE_INPUT}        xpath=//input[@type="text" and contains(@value,"+91")]
+${PRIVACY_DROPDOWN}    xpath=(//label[normalize-space(text())="Mobile Number"]/following::select)[1]
+
+# --- Email ---
+${EMAIL_HEADING}     xpath=//label[text()='Email ID']
+${EMAIL_INPUT}       xpath=//input[@type="email"]
+${EMAIL_DROPDOWN}    xpath=//label[normalize-space(text())="Email ID"]/following::select[1]
+
+# --- DOB ---
+${DOB_HEADING}    xpath=//label[text()='Date of Birth']
+${DOB_INPUT}      xpath=//label[text()='Date of Birth']/following-sibling::input
+${DOB_DROPDOWN}   xpath=//label[text()='Date of Birth']/following-sibling::select
+
+
+# --- Photo ---
+${PHOTO_HEADING}       xpath=//label[normalize-space(text())="Photo Visibility"]
+${PHOTO_DROPDOWN}      xpath=(//label[normalize-space(text())="Photo Visibility"]/following::select)[1]
+
+# --- Astro ---
+${ASTRO_HEADING}       xpath=//label[normalize-space(text())="Astro Details"]
+${ASTRO_DROPDOWN}      xpath=(//label[normalize-space(text())="Astro Details"]/following::select)[1]
+
+
+${ALERTS_HEADING}    xpath=//h2[text()='Alerts']
+
+# Verify Personalized Profile Section ALERTS_TOGGLE
+${PERSONALIZED_HEADING}    xpath=//span[text()='Personalized Profile']
+${PERSONALIZED_DESC}       xpath=//span[text()='Personalized Profile']/following-sibling::p
+${ALERTS_TOGGLE}           xpath=//input[@type='checkbox' and contains(@class,'peer')]
+
+#  Verify Recent Visitor Section ALERTS_TOGGLE
+${RECENT_VISITOR_HEADING}    xpath=//span[text()='Recent Visitor']
+${RECENT_VISITOR_DESC}       xpath=//span[text()='Recent Visitor']/following-sibling::p
+${RECENT_VISITOR_TOGGLE}    xpath=//span[text()='Recent Visitor']/ancestor::div[@class='flex justify-between items-center mt-7']//input[@type='checkbox']
+
+# Verify Chat Alerts Section ALERTS_TOGGLE
+${CHAT_ALERTS_HEADING}    xpath=//span[text()='Chat Alerts']
+${CHAT_ALERTS_DESC}       xpath=//span[text()='Chat Alerts']/following-sibling::p
+${CHAT_ALERTS_TOGGLE}     xpath=//span[text()='Chat Alerts']/ancestor::div[@class='flex justify-between items-center mt-7']//input[@type='checkbox']
+
+
+${MESSAGE_HEADING}    xpath=//h2[text()='Message']
+${AUTO_MSG_HEADING}    xpath=//p[text()='Automated message on connection']
+${AUTO_MSG_DESC}       xpath=//p[text()='A message will be delivered to the person who has accepted your connection request']
+
+${AUTO_MSG_ACCEPT_HEADING}    xpath=//p[text()='Automated message on connection acceptance']
+${AUTO_MSG_ACCEPT_DESC}       xpath=//p[text()='A message will be delivered to the person whose request you have accepted']
+
+
+${AUTO_MSG_REMINDER_HEADING}    xpath=//p[text()='Automated message for reminders']
+${AUTO_MSG_REMINDER_DESC}       xpath=//p[text()='A message will be delivered to the person who has not responded to your messages.']
+
+
+${HIDE_DELETE_HEADING}    xpath=//h2[normalize-space(text())='Hide / Delete Profile']
+# ${HIDE_PROFILE_TITLE}       xpath=//span[normalize-space(text())='Hide Profile']
+${HIDE_PROFILE_DESC}        xpath=//p[contains(text(),'When you hide profile you will not be visible')]
+${HIDE_PROFILE_BUTTON}      xpath=//button[normalize-space(text())='Hide']
+
+
+${HIDE_DELETE_PROFILE_HEADING}    xpath=//h2[normalize-space(text())='Hide / Delete Profile']
+${DELETE_PROFILE_DESC}       xpath=//p[contains(text(),'You will permanently loss all profile information')]
+${DELETE_PROFILE_BUTTON}     xpath=//button[normalize-space(text())='Delete']
+
+
+
+${LOGOUT_BUTTON}    xpath=//button[normalize-space(text())='Log out']
+
+
+
+
+
+
 
 
 
 # -----------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # footer links xpaths 
 # 1
 ${Follow_us_on}  xpath=//h1[normalize-space(.)='Follow us on :']

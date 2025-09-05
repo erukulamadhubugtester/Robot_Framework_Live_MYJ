@@ -25,6 +25,8 @@
 
 import time
 from robot.api.deco import keyword
+from SeleniumLibrary import SeleniumLibrary
+from robot.libraries.BuiltIn import BuiltIn
 
 # NOTE: do not import BuiltIn globally at the top
 # because libdoc loads libraries outside Robot runtime
@@ -59,3 +61,13 @@ class HighlightLibrary:
         driver = sl.driver
         element = sl.find_element(locator)
         self._highlight(element, driver)
+
+    def scroll_element_to_middle(locator):
+        # Get SeleniumLibrary instance
+        sl = BuiltIn().get_library_instance("SeleniumLibrary")
+        # Find the element
+        element = sl.find_element(locator)
+        # Execute JavaScript to scroll into middle of viewport
+        sl.driver.execute_script(
+            "arguments[0].scrollIntoView({block: 'center'});", element
+        )
