@@ -107,9 +107,21 @@ notifications:
 	@python -m robot -d $(RESULTS_DIR) tests/notifications_module_test.robot
 	$(OPEN_REPORT)
 
-account seetings:
+account_seetings:
 	$(CLEAN_RESULTS)
 	@echo "🚀 Running ONLY login tests..."
 	@python -m robot -d $(RESULTS_DIR) tests/account_seetings_module_test.robot
 	$(OPEN_REPORT)
 
+perference_seetings:
+	$(CLEAN_RESULTS)
+	@echo "🚀 Running ONLY login tests..."
+	@python -m robot -d $(RESULTS_DIR) tests/perference_seetings_module_test.robot
+	$(OPEN_REPORT)
+
+
+recent_profile_visitors:
+	$(CLEAN_RESULTS)
+	@echo "🚀 Running ONLY login tests..."
+	@python -m robot -d $(RESULTS_DIR) tests/recent_profile_visitors_test.robot
+	$(OPEN_REPORT)

@@ -229,6 +229,138 @@ ${DELETE_PROFILE_BUTTON}     xpath=//button[normalize-space(text())='Delete']
 
 
 ${LOGOUT_BUTTON}    xpath=//button[normalize-space(text())='Log out']
+# -----------------
+
+
+# User Preference  Settings 
+${preference_settings_link}      xpath=//a[text()='Preferences settings']
+${preference_settings_URL}       https://makeyourjodi.com/preference
+
+${preference_SETTINGS_TITLE}    xpath=//h2[normalize-space(.)='Preference settings']
+
+${CLEAR_BUTTON}    xpath=//button[normalize-space(text())='Clear']
+${SAVE_BUTTON}     xpath=//button[normalize-space(text())='Save']
+
+
+${HEIGHT_TITLE}      xpath=//label[normalize-space(text())='Height']
+${HEIGHT_VALUE}      xpath=//label[normalize-space(text())='Height']/following::div[contains(@class,'border-pink-900')][1]
+
+${AGE_TITLE}      xpath=//label[normalize-space(text())='Age']
+${AGE_VALUE}      xpath=//label[normalize-space(text())='Age']/following::div[contains(@class,'border-pink-900')][1]
+
+${MARITAL_TITLE}    xpath=//label[normalize-space(text())='Marital status']
+${MARITAL_VALUE}    xpath=//div[@id='marital-status']//div[contains(@class,'singleValue')]
+
+${RELIGION_TITLE}    xpath=//label[normalize-space(.)='Religion']
+${RELIGION_INPUT}    xpath=//label[normalize-space(.)='Religion']/following::input[1]
+
+${COMMUNITY_TITLE}    xpath=//label[normalize-space(.)='Community']
+${COMMUNITY_INPUT}    xpath=//label[normalize-space(.)='Community']/following::input[1]
+
+
+${MOTHER_TONGUE_TITLE}    xpath=//label[normalize-space(.)='Mother Tongue']
+${MOTHER_TONGUE_INPUT}    xpath=//input[@name='mother-tongue']
+
+${FAMILY_STATUS_LABEL}    xpath=//label[normalize-space(.)='Family Status']
+${FAMILY_STATUS_VALUE}    xpath=//div[@id='family-status']//div[contains(@class,'singleValue')]
+${FAMILY_STATUS_HIDDEN}   xpath=//input[@name='family-status']
+
+
+${MANGLIK_LABEL}    xpath=//label[normalize-space(.)='Manglik']
+${MANGLIK_INPUT}    xpath=//input[@id='react-select-4-input']
+${MANGLIK_VALUE}    xpath=//div[@id='react-select-4-input']/ancestor::div[contains(@class,'control')]//div[contains(@class,'singleValue')]
+
+${KUNDALI_LABEL}     xpath=//label[normalize-space(.)='KundaliDosham']
+${KUNDALI_VALUE}     xpath=//div[@id='kundali-dosham']//div[contains(@class,'singleValue')]
+${KUNDALI_HIDDEN}    xpath=//input[@name='kundali-dosham']
+
+
+# ${ORIGIN_COUNTRY_LABEL}    xpath=//label[normalize-space(.)='Origin  Country']
+# ${ORIGIN_COUNTRY_INPUT}    xpath=//label[normalize-space(.)='Origin  Country']/following::input[@placeholder='Search Country'][1]
+*** Variables ***
+${ORIGIN_COUNTRY_LABEL}     xpath=//label[contains(normalize-space(.), 'Origin')]
+${ORIGIN_COUNTRY_INPUT}      xpath=//input[@aria-label="Country Input"]
+
+
+${ORIGIN_STATE_LABEL}    xpath=//label[normalize-space(.)='Origin State']
+${ORIGIN_STATE_INPUT}    xpath=//label[normalize-space(.)='Origin State']/following::input[@placeholder='Search State'][1]
+
+${ORIGIN_CITY_LABEL}    xpath=//label[normalize-space(.)='Origin City']
+${ORIGIN_CITY_INPUT}    xpath=//label[normalize-space(.)='Origin City']/following::input[@placeholder='Search City'][1]
+
+${CURRENT_STATE_LABEL}    xpath=//label[normalize-space(.)='Current State']
+${CURRENT_STATE_INPUT}    xpath=//label[normalize-space(.)='Current State']/following::input[@placeholder='Search State'][1]
+
+
+${CURRENT_CITY_LABEL}    xpath=//label[normalize-space(.)='Current City']
+${CURRENT_CITY_INPUT}    xpath=//label[normalize-space(.)='Current City']/following::input[@placeholder='Search City'][1]
+
+
+${QUALIFICATION_LABEL}      xpath=//label[normalize-space(.)='Qualification']
+${QUALIFICATION_VALUE}      xpath=//div[@id='qualification']//div[contains(@class,'singleValue')]
+${QUALIFICATION_INPUT}      xpath=//input[@id='react-select-17-input']
+${QUALIFICATION_HIDDEN}     xpath=//input[@name='qualification']
+
+
+${EMPLOYMENT_TYPE_LABEL}      xpath=//label[normalize-space(.)='Employment Type']
+${EMPLOYMENT_TYPE_VALUE}      xpath=//div[@id='employment-type']//div[contains(@class,'singleValue')]
+${EMPLOYMENT_TYPE_HIDDEN}     xpath=//input[@name='employment-type']
+
+
+${JOB_ROLE_LABEL}    xpath=//label[normalize-space(.)='Job Role']
+${JOB_ROLE_INPUT}    xpath=//label[normalize-space(.)='Job Role']/following::input[@placeholder='Search for a job role'][1]
+
+*** Variables ***
+${ANNUAL_INCOME_LABEL}       xpath=//label[normalize-space(.)='Annual Income']
+${ANNUAL_INCOME_PLACEHOLDER}  xpath=//div[@id='annual-income']//div[contains(@id,"placeholder")]
+${ANNUAL_INCOME_INPUT}       xpath=//input[@id='react-select-19-input']
+${ANNUAL_INCOME_HIDDEN}      xpath=//input[@name='annual-income']
+
+*** Variables ***
+${DIET_PREFERENCE_LABEL}     xpath=//label[normalize-space(.)='Diet preferences']
+${DIET_PREFERENCE_VALUE}     xpath=//div[@id='diet-preference']//div[contains(@class,'singleValue')]
+${DIET_PREFERENCE_HIDDEN}    xpath=//input[@name='diet-preference']
+
+
+*** Variables ***
+${SMOKING_HABIT_LABEL}     xpath=//label[normalize-space(.)='Smoking Habit']
+${SMOKING_HABIT_VALUE}     xpath=//div[@id='smoking-habit']//div[contains(@class,'singleValue')]
+${SMOKING_HABIT_HIDDEN}    xpath=//input[@name='smoking-habit']
+
+
+*** Variables ***
+${DRINKING_HABIT_LABEL}     xpath=//label[normalize-space(.)='Drinking Habit']
+${DRINKING_HABIT_VALUE}     xpath=//div[@id='drinking-habit']//div[contains(@class,'singleValue')]
+${DRINKING_HABIT_HIDDEN}    xpath=//input[@name='drinking-habit']
+
+# -----------------
+
+
+# User recent_profile_visitors
+${recent_profile_visitors_link}      xpath=//a[text()='Recent profile visitors']
+${recent_profile_visitors_URL}       https://makeyourjodi.com/recent-visitors
+
+${recent_profile_visitors_TITLE}    xpath=//h2[normalize-space(.)='Recent Profile Visitors']
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -239,22 +371,6 @@ ${LOGOUT_BUTTON}    xpath=//button[normalize-space(text())='Log out']
 
 
 # -----------------
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # footer links xpaths 
 # 1
 ${Follow_us_on}  xpath=//h1[normalize-space(.)='Follow us on :']
