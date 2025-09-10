@@ -125,3 +125,11 @@ recent_profile_visitors:
 	@echo "🚀 Running ONLY login tests..."
 	@python -m robot -d $(RESULTS_DIR) tests/recent_profile_visitors_test.robot
 	$(OPEN_REPORT)
+
+
+
+rewards_and_referrals:
+	$(CLEAN_RESULTS)
+	@echo "🚀 Running ONLY login tests..."
+	@python -m robot -d $(RESULTS_DIR) tests/rewards_and_referrals_test.robot
+	$(OPEN_REPORT)

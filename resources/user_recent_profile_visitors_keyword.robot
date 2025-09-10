@@ -62,3 +62,21 @@ Verify recent-visitors Title
     Log To Console    \n📌 Recent Profile Visitors Title: ${title_text}
     Should Be Equal As Strings    ${title_text}    Recent Profile Visitors
     Highlight Element    ${recent_profile_visitors_TITLE}
+
+
+Get Visitor Profile Count
+    ${count}=    Get Element Count    ${VISITOR_PROFILE_CARD}
+    Log To Console    🔹 Total visitor profiles: ${count}
+
+Verify Recent Visitors Page
+    ${is_message_visible}=    Run Keyword And Return Status    Element Should Be Visible    ${RECENT_VISITOR_MESSAGE}
+    Run Keyword If    ${is_message_visible}    Log To Console    ⚠️ Free User → Message visible
+    Run Keyword If    ${is_message_visible}    Element Should Be Visible    ${UPGRADE_BUTTON}
+    Run Keyword If    ${is_message_visible}    Log To Console    🟣 Upgrade button is displayed
+
+    ${is_profile_visible}=    Run Keyword And Return Status    Element Should Be Visible    ${VISITOR_PROFILE_CARD}
+    Run Keyword If    ${is_profile_visible}    Log To Console    ✅ VIP User → Visitor profiles displayed
+    Run Keyword If    ${is_profile_visible}    Get Visitor Profile Count
+
+    Run Keyword If    not ${is_message_visible} and not ${is_profile_visible}    Fail    ❌ Neither free user message nor profiles found!
+

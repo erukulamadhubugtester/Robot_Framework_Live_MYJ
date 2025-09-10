@@ -9,11 +9,11 @@ ${LOGIN_BUTTON}  xpath=//a[@href="/login" and contains(@class,"py-2")]
 ${LOGIN_LINK}        xpath=//a[@href="/login" and contains(@class,"py-2")]
 ${LOGIN_HEADER}      xpath=//h1[contains(@class,"title-outsidelogin") and text()="Login"]
 ${PHONE_INPUT}       xpath=//input[@type='tel']
-# ${PHONE_NUMBER}      6303481147 
-${PHONE_NUMBER}    7289957376
+${PHONE_NUMBER}      6303481147 
+# ${PHONE_NUMBER}    7289957376
 ${PASSWORD_INPUT}    id=password
-# ${PASSWORD}          Qwerty@1
-${PASSWORD}          Qwerty@8
+${PASSWORD}          Qwerty@1
+# ${PASSWORD}          Qwerty@8
 ${CONTINUE_BUTTON}   xpath=//button[contains(@class,"submit-buttonlogin")]
 
 
@@ -343,21 +343,64 @@ ${recent_profile_visitors_URL}       https://makeyourjodi.com/recent-visitors
 ${recent_profile_visitors_TITLE}    xpath=//h2[normalize-space(.)='Recent Profile Visitors']
 
 
+${RECENT_VISITOR_MESSAGE}    xpath=//p[contains(text(),'Upgrade your account to view')]
+${UPGRADE_BUTTON}            xpath=//button[contains(.,'Upgrade')]
+${VISITOR_PROFILE_CARD}      xpath=//div[contains(@class,'card-grid')]//div[contains(@class,'cart-main-body')]
 
 
 
+# -----------------
+
+
+# User rewards_and_referrals
+${rewards_and_referrals_link}      xpath=//a[text()='Rewards and Referrals']
+${rewards_and_referrals_URL}       https://makeyourjodi.com/referral
+
+${rewards_and_referrals_TITLE}    xpath=//h1[normalize-space(.)='Rewards and Referrals']
+
+
+${GOLD_COIN_ICON}      xpath=//img[@alt="gold_coin_icon_404"]
+${REWARDS_TITLE}       xpath=//h1[normalize-space(.)='Rewards Points']
+${BALANCE_TEXT}    xpath=//h1[contains(normalize-space(.),"Balance")]
+
+
+${REWARDS_HISTORY_TITLE}    xpath=//h1[contains(text(),'Rewards Redemption History')]
+${REWARDS_HISTORY_CARD}     //div[contains(@class,'border-b') and contains(@class,'flex')]
+${BALANCE_LABEL}            xpath=//h1[contains(text(),'Balance')]
 
 
 
+${FLOW_1_TITLE}        xpath=//h1[normalize-space(.)='Send invitation']
+${FLOW_1_DESC}         xpath=//h3[contains(text(),'Send the referral link')]
+
+${FLOW_2_TITLE}        xpath=//h1[normalize-space(.)='Registration']
+${FLOW_2_DESC}         xpath=//h3[contains(text(),'Let them register')]
+
+${FLOW_3_TITLE}        xpath=//h1[normalize-space(.)='Get Rewarded!']
+${FLOW_3_DESC}         xpath=//h3[contains(text(),'Get rewards for referring')]
 
 
+${REWARD_POLICY_TITLE}    xpath=//h1[normalize-space()='Reward Policy']
+${REWARD_POLICY_LIST}     xpath=//h1[normalize-space()='Reward Policy']/ancestor::div[contains(@class,'conditions-box')]//ol/li
+
+${REWARD_POLICY_ITEMS}    xpath=//h1[normalize-space()='Reward Policy']/following::ol[1]/li
 
 
+${REFERRAL_LABEL}    xpath=//span[normalize-space()='Your Referral Code']
+${REFERRAL_CODE}     xpath=//button//span[contains(@class,'font-semibold') and not(normalize-space()='Your Referral Code')]
+
+${WHATSAPP_ICON}    xpath=//img[@alt='WhatsApp']
+
+${FACEBOOK_ICON}    xpath=//img[@alt='Facebook']
+
+${INSTAGRAM_ICON}    xpath=//img[@alt='Instagram']
+
+${LINKEDIN_ICON}    xpath=//img[@alt='LinkedIn']
+
+${REDEMPTION_HISTORY_TITLE}    xpath=//h1[normalize-space()='Rewards Redemption History']
 
 
-
-
-
+${REWARDS_ROW}    xpath=//div[contains(@class,'border-b')]
 
 
 
