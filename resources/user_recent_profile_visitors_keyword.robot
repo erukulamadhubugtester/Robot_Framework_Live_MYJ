@@ -68,15 +68,34 @@ Get Visitor Profile Count
     ${count}=    Get Element Count    ${VISITOR_PROFILE_CARD}
     Log To Console    🔹 Total visitor profiles: ${count}
 
+# Verify Recent Visitors Page
+#     Sleep  5
+#     ${is_message_visible}=    Run Keyword And Return Status    Element Should Be Visible    ${RECENT_VISITOR_MESSAGE}
+#     Run Keyword If    ${is_message_visible}    Log To Console    ⚠️ Free User → Message visible
+#     Run Keyword If    ${is_message_visible}    Element Should Be Visible    ${UPGRADE_BUTTON}
+#     Run Keyword If    ${is_message_visible}    Log To Console    🟣 Upgrade button is displayed
+
+#     ${is_profile_visible}=    Run Keyword And Return Status    Element Should Be Visible    ${VISITOR_PROFILE_CARD}
+#     Run Keyword If    ${is_profile_visible}    Log To Console    ✅ VIP User → Visitor profiles displayed
+#     Run Keyword If    ${is_profile_visible}    Get Visitor Profile Count
+
+#     Run Keyword If    not ${is_message_visible} and not ${is_profile_visible}    Fail    ❌ Neither free user message nor profiles found!
+
+
+*** Keywords ***
 Verify Recent Visitors Page
+    Wait Until Element Is Visible   ${RECENT_VISITOR_MESSAGE}    ${VISITOR_PROFILE_CARD}    
+
+    # Check free user message
     ${is_message_visible}=    Run Keyword And Return Status    Element Should Be Visible    ${RECENT_VISITOR_MESSAGE}
     Run Keyword If    ${is_message_visible}    Log To Console    ⚠️ Free User → Message visible
     Run Keyword If    ${is_message_visible}    Element Should Be Visible    ${UPGRADE_BUTTON}
     Run Keyword If    ${is_message_visible}    Log To Console    🟣 Upgrade button is displayed
 
+    # Check visitor profiles
     ${is_profile_visible}=    Run Keyword And Return Status    Element Should Be Visible    ${VISITOR_PROFILE_CARD}
     Run Keyword If    ${is_profile_visible}    Log To Console    ✅ VIP User → Visitor profiles displayed
     Run Keyword If    ${is_profile_visible}    Get Visitor Profile Count
 
+    # Fail if neither
     Run Keyword If    not ${is_message_visible} and not ${is_profile_visible}    Fail    ❌ Neither free user message nor profiles found!
-

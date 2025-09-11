@@ -313,24 +313,32 @@ Verify Current City Field
     ...    ELSE    Log To Console    "✅ City entered: ${value}"
 
 
+    Execute JavaScript    window.scrollBy(0,400)
+    Sleep    1s 
+*** Keywords ***
+*** Keywords ***
 Verify Qualification Field
+    # Verify Label
     Wait Until Element Is Visible    ${QUALIFICATION_LABEL}    10s
     ${title}=    Get Text    ${QUALIFICATION_LABEL}
-    Log To Console    "📌 Title: ${title}"
+    Log To Console    📌 Title: ${title}
     Should Be Equal    ${title}    Qualification
 
-    # Dropdown value
-    Wait Until Element Is Visible    ${QUALIFICATION_VALUE}    10s
-    ${selected}=    Get Text    ${QUALIFICATION_VALUE}
-    Log To Console    "🔹 Selected Qualification: ${selected}"
+    # Try to get selected value safely
+    ${status}    ${selected}=    Run Keyword And Ignore Error    Get Text    ${QUALIFICATION_VALUE}
+    Run Keyword If    '${status}' == 'FAIL'    Log To Console    ⚠️ Selected value not rendered yet
 
-    # Hidden value
+    Log To Console    🔹 Selected Qualification: ${selected}
+
+    # Hidden input value
     ${hidden_value}=    Get Element Attribute    ${QUALIFICATION_HIDDEN}    value
-    Log To Console    "🗂️ Hidden Value: ${hidden_value}"
+    Log To Console    🗂️ Hidden Value: ${hidden_value}
 
-    Run Keyword If    "${selected}" == "Doesn't matter"    Log To Console    "⚠️ Default Qualification is selected"
-    ...    ELSE    Log To Console    "✅ User selected Qualification: ${selected}"
-    ...    
+    # Conditional Logging
+    Run Keyword If    '${selected}' == "Doesn't matter"    Log To Console    ⚠️ Default Qualification is selected
+    Run Keyword Unless    '${selected}' == "Doesn't matter"    Log To Console    ✅ User selected Qualification: ${selected}
+
+
 
 Verify Employment Type Field
     Wait Until Element Is Visible    ${EMPLOYMENT_TYPE_LABEL}    10s

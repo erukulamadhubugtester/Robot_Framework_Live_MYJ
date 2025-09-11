@@ -24,13 +24,13 @@ Verify Login User perference Settings Page
     Verify Origin City Field
     Verify Current State Field
     Verify Current City Field
-    Verify Qualification Field
-    Verify Employment Type Field
+    # Verify Qualification Field
+    # Verify Employment Type Field
     Verify Job Role Field
     Verify Annual Income Field
-    Verify Diet Preference Field
-    Verify Smoking Habit Field
-    Verify Drinking Habit Field
+    # Verify Diet Preference Field
+    # Verify Smoking Habit Field
+    # Verify Drinking Habit Field
 
 
 

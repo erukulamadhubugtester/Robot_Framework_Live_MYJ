@@ -403,9 +403,25 @@ ${REDEMPTION_HISTORY_TITLE}    xpath=//h1[normalize-space()='Rewards Redemption 
 ${REWARDS_ROW}    xpath=//div[contains(@class,'border-b')]
 
 
+# -----------------
 
 
+# User help
 
+${help_link}      xpath=//a[text()='Help']
+${help_URL}       https://makeyourjodi.com/help
+
+${HELP_CENTRE_TITLE}    xpath=//h1[normalize-space(.)='Help Centre']
+
+${WRITE_ISSUE_BUTTON}    xpath=//button[.//h1[normalize-space(.)='Write an issue']]
+${WRITE_ISSUE_TEXT}      xpath=//button//h1[normalize-space(.)='Write an issue']
+
+${CALL_US_TITLE}         xpath=//h1[normalize-space(.)='Call us now']
+${CALL_US_NUMBER}        xpath=//h3[contains(text(),'+91')]
+${CALL_US_TIMING}        xpath=//h5[contains(text(),'Call us between')]
+
+
+${LOGOUT_LINK}    xpath=//a[normalize-space(.)='Logout']
 
 
 
