@@ -133,3 +133,10 @@ rewards_and_referrals:
 	@echo "🚀 Running ONLY login tests..."
 	@python -m robot -d $(RESULTS_DIR) tests/rewards_and_referrals_test.robot
 	$(OPEN_REPORT)
+
+
+help:
+	$(CLEAN_RESULTS)
+	@echo "🚀 Running ONLY login tests..."
+	@python -m robot -d $(RESULTS_DIR) tests/help.robot
+	$(OPEN_REPORT)
